@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block body %}
+
+{% include 'header.html' %}
+
+
+
+ <div class="login-page" style="margin-top: -70px;">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-success ">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+    {% endwith %}
+    <div class="form" >
+        <form style="display: block;" class="register-form" action="{{ url_for('update_post') }}" method="POST">
+
+            <input type="text" name="firstname" placeholder="Prénom" value="{{current_user.firstname}}"/>
+            <input type="text" name="lastname" placeholder="Nom" value="{{current_user.lastname}}"/>
+            <input type="email" name="email" placeholder="Email" value="{{current_user.email}}" disabled/>
+            <input type="text" name="status" placeholder="Status" value="{{current_user.status}}"/>
+            <input type="text" name="company" placeholder="Company" value="{{current_user.company}}"/>
+            <input type="text" name="activity" placeholder="Activity" value="{{current_user.activity}}"/>
+            <input type="text" name="diplome" placeholder="Diplome" value="{{current_user.diplome}}"/>
+            <input type="tel" name="phone" placeholder="Tel" value="{{current_user.phone}}"/>
+            <input type="text" name="city" placeholder="Ville" value="{{current_user.city}}"/>
+            
+
+            <button>Modifier</button>
+        </form>
+    </div>
+    </div>
+
+{% endblock %}

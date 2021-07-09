@@ -1,0 +1,133 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.full-page
+{
+    height: 100%;
+	width: 100%;
+	background-image:url(image/desgn.jpg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+.navbar
+{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 50px;
+    background-color: rgba(34, 31, 31, 0.548);
+}
+nav
+{
+    flex: 1;
+    text-align: right;
+    
+}
+nav ul 
+{
+    display: inline-block;
+    list-style: none;
+}
+nav ul li
+{
+    display: inline-block;
+    margin-right: 70px;
+}
+nav ul li a
+{
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-family: sans-serif;
+}
+nav ul li button
+{
+    font-size: 25px;
+    color: white;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+nav ul li button:hover
+{
+    color: rgb(33, 105, 55);
+}
+nav ul li a:hover
+{
+    color: rgb(25, 109, 57);
+}
+a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login-box{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+  }
+  .login-box h1{
+    float: left;
+    font-size: 40px;
+    border-bottom: 6px solid #141412;
+    margin-bottom: 50px;
+    padding: 13px 0;
+  }
+  .textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 50px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid #4caf50;
+  }
+  .textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+  }
+  .textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+  }
+  .btn{
+    width: 100%;
+    background: none;
+    border: 2px solid #4caf50;
+    color: white;
+    padding: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 12px 0;
+  }
+
+
+
+/* body{
+    margin:0;
+    padding: 0;
+    background: url(ewaimage.jpg);
+    background-size:cover ;
+    font-family: sans-serif;
+} */

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Profile {% endblock %}
+
+{% block body %}
+
+{% include 'header.html' %}
+
+
+
+
+
+
+
+<div class="wrapper">
+    <div class="left">
+        <img src="{{url_for('static', filename='image/1.jpg')}}"
+        alt="user" width="100">
+        <h4> {{current_user.firstname}} {{current_user.lastname}} </h4>
+        <p>{{current_user.status}}</p>
+        <a href="/updatePage" class="btn btn-info">Modifier</a>
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>Informations</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Email</h4>
+                    <p>{{current_user.email}}</p>
+                 </div>
+                 <div class="data">
+                   <h4>Telephone</h4>
+                    <p>{{current_user.phone}}</p>
+              </div>
+            </div>
+        </div>
+
+      <div class="projects">
+            <h3>Status</h3>
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>Diplome</h4>
+                    <p>{{current_user.diplome}}</p>
+                 </div>
+                 <div class="data">
+                   <h4>Ville</h4>
+                    <p>{{current_user.city}}</p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

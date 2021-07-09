@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+
+{% block title %} dashbord {% endblock%}
+
+
+{% block body %}
+
+{% include 'header.html' %}
+
+<div class="container-lg mt-5">
+    <div class="row">
+        <div class="col-xs-10 col-sm-6 col-md-7">
+            <div class="card card-style mb-2">
+            <div class="card-body">
+                <div class="chart-container" style="position: relative;">
+                    <canvas id="myChart" max-width="100" max-height="100"></canvas>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-xs-10 col-sm-6 col-md-5">
+        <div class="card card-style mb-2">
+            <div class="card-body">
+                <div class="chart-container" style="position: relative;">
+                    <canvas id="chart" max-width="100" max-height="100"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10 col-sm-6 col-md-7">
+            <div class="card card-style mb-2">
+            <div class="card-body">
+                <div class="chart-container" style="position: relative;">
+                    <canvas id="statusChart" max-width="100" max-height="100"></canvas>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% block canva %}
+<script>
+    let dataCities_db = JSON.parse({{ dataCities | tojson }})
+    let dataStudentC_db = JSON.parse({{ dataStudentsC | tojson }})
+    let dataDiplomes_db = JSON.parse({{ dataDiplomes | tojson }})
+    let dataStudentD_db = JSON.parse({{ dataStudentsD | tojson }})
+
+    let dataStatus_db = JSON.parse({{ dataStatus | tojson }})
+    let dataStudentS_db = JSON.parse({{ dataStudentsS | tojson }})
+
+
+    var bar = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(bar, {
+        type: 'bar',
+        data: {
+            labels: dataCities_db,
+            datasets: [{
+                label: 'Nombre etudiants par ville',
+                data: dataStudentC_db,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                },
+            }
+        }
+    });
+</script>
+
+
+<script>
+    var pie = document.getElementById('chart').getContext('2d');
+    var chart = new Chart(pie, {
+        type: 'pie',
+        data: {
+            labels: dataDiplomes_db,
+            datasets: [{
+                label: 'Nombre etudiants par Ville',
+                data: dataStudentD_db,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+
+    });
+</script>
+
+<script>
+    var bar = document.getElementById('statusChart').getContext('2d');
+    var chart = new Chart(bar, {
+        type: 'bar',
+        data: {
+            labels: dataStatus_db,
+            datasets: [{
+                label: 'Nombre des etudiants par statut professionnel',
+                data: dataStudentS_db,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)', 
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+
+    });
+</script>
+
+
+{% endblock %}
+{% endblock %}
+

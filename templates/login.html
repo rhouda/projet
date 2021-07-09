@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock%}
+
+
+{% block body %}
+<body class="login-bg">
+  <div class="header">
+  <a href="#default" class="logo">eWA</a>
+
+</div>
+
+<div class="">
+<div class="login-page">
+
+    <div class="form">
+      
+        <form class="register-form" action="{{ url_for('signup_post') }}" method="POST">
+            <input type="text" name="firstname" placeholder="Prénom" required/>
+            <input type="text" name="lastname" placeholder="Nom" required/>
+            <input type="email" name="email" placeholder="Email" required/>
+            <div class="form-group">
+              <label class="text-left" for="statusPro">Status pro</label>
+              <select name="status" class="form-control" id="statusPro">
+                <option value="salarie">Salarie</option>
+                <option value="freelance">Freelance</option>
+                <option value="etudiant(e)">Poursuite etude</option>
+                <option value="rechercheEmploi">Recherche d'emploie</option>
+              </select>
+            </div>
+            <input type="text" name="company" placeholder="Company"/>
+            <input type="text" name="activity" placeholder="Activity"/>
+            <input type="text" name="diplome" placeholder="diplome" required/>
+
+            <input type="tel" name="phone" placeholder="Tel" required/>
+            <input type="text" name="city" placeholder="Ville" required/>
+            <input type="password" name="pw" placeholder="password" required/>
+
+            <button>Creer</button>
+            
+            <p class="message">J'ai deja un comte <a href="#">Se connecter</a></p>
+        </form>
+      
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+      <form class="login-form"  action="{{ url_for('signin_post') }}" method="POST">
+        <input type="email" name="email" placeholder="email"/>
+        <input type="password" name= "password" placeholder="password"/>
+        <button>Se connecter</button>
+        <p class="message">Non enregister <a href="#">Creer un compte</a></p>
+      </form>
+
+   
+    </div>
+  </div>
+  <div class="background">
+  </div>
+  </div>
+</body>
+{% endblock %}

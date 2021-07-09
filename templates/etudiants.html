@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Etudiants {% endblock %}
+
+
+{% block body %}
+
+{% include 'header.html' %}
+
+
+
+
+<div class="container-lg mt-5">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-danger">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+<table id ="tableaux">
+    <tr >
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>email</th>
+        <th>status</th>
+        <th>phone</th>
+        <th>activity</th>
+        <th>company</th>
+        <th>diplome</th>
+        <th>city</th>
+        <th>Action</th>
+    </tr>
+
+     {% for student in students %}
+     <tr>
+         <td>{{student.firstname}}</td>
+         <td>{{student.lastname}}</td>
+         <td>{{student.email}}</td>
+         <td>{{student.status}}</td>
+         <td>{{student.phone}}</td>
+         <td>{{student.activity}}</td>
+         <td>{{student.company}}</td>
+         <td>{{student.diplome}}</td>
+         <td>{{student.city}}</td>
+         <td><a href="/delete/{{student.id}}" class="btn btn-danger">Supprimer</a></td>
+     </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}
