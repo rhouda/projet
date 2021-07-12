@@ -2539,19 +2539,19 @@ fieldset:disabled a.btn {
 }
 .btn-info {
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color: #ecee74;
+  border-color: #e7e989;
 }
 .btn-info:hover {
   color: #fff;
-  background-color: #138496;
-  border-color: #117a8b;
+  background-color: #f8fc39;
+  border-color: #f8fc39;
 }
 .btn-info.focus,
 .btn-info:focus {
   color: #fff;
-  background-color: #138496;
-  border-color: #117a8b;
+  background-color: #f8fc39;
+  border-color:#f8fc39;
   box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
 }
 .btn-info.disabled,
@@ -4446,7 +4446,8 @@ input[type="submit"].btn-block {
 }
 .navbar-dark .navbar-nav .nav-link:focus,
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(255, 255, 255, 0.75);
+  /* color: rgba(255, 255, 255, 0.75); */
+  color: rgb(204, 252, 74);
 }
 .navbar-dark .navbar-nav .nav-link.disabled {
   color: rgba(255, 255, 255, 0.25);
@@ -4455,7 +4456,7 @@ input[type="submit"].btn-block {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show > .nav-link {
-  color: #fff;
+  color:#fff;
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
@@ -6312,7 +6313,7 @@ button.bg-light:hover {
   background-color: #dae0e5 !important;
 }
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #9932cc !important;
 }
 a.bg-dark:focus,
 a.bg-dark:hover,

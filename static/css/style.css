@@ -163,15 +163,13 @@ body {
 }*/
 
 body{
-/*    background-image: url(../image/jau.jpeg);
+   /* background-image: url(../image/jau.jpeg); */
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center center;*/
-
-    }
-
+    background-position: center center;
+    } 
 
 
 
@@ -186,7 +184,8 @@ body{
 
 
 
-.login-page {
+
+  .login-page {
     width: 360px;
     padding: 3% 0 0;
     margin: auto;
@@ -221,8 +220,8 @@ body{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-   /* background: rgb(15, 15, 15);*/
-   background: DarkOrchid;
+    background: rgb(15, 15, 15);
+    background: DarkOrchid;
     opacity: 0,6;
     width: 100%;
     border: 0;
@@ -232,8 +231,8 @@ body{
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-  }
-  .form button:hover,
+  } 
+   .form button:hover,
   .form button:active,
   .form button:focus {
     background: purple;
@@ -242,7 +241,7 @@ body{
     margin: 15px 0 0;
     color: white;
     font-size: 12px;
-  }
+  } 
 
   .form .message a {
     color: rgb(60, 32, 87);
@@ -282,11 +281,16 @@ body{
   .container .info span a {
     color: #000000;
     text-decoration: none;
-  }
-  .container .info span .fa {
+  } 
+   .container .info span .fa {
     color: #ef3b3a;
-  }
+  } 
 
+
+  
+  
+  
+  
 
 
 
@@ -326,6 +330,7 @@ body{
   box-sizing: border-box;
   list-style: none;
   font-family: 'Josefin Sans', sans-serif;
+  background-attachment:fixed;
 }
 
 body{
@@ -345,7 +350,7 @@ body{
 
 .wrapper .left{
   width: 35%;
-  background: linear-gradient(to right,#6a1275,#6a1275);
+  background: #9932cc;
   padding: 30px 25px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -416,5 +421,9 @@ body{
 .wrapper .social_media ul{
   display: flex;
 }
+
+
+
+
 
 

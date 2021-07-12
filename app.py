@@ -88,13 +88,13 @@ def etudiants():
 @login_required
 def dashboard():
     students_by_city = db.session.query(Data.city, db.func.count(
-        Data.city)).group_by(db.func.LOWER(Data.city)).filter(Data.email != "admin@gmail.com").all()
+        Data.city)).group_by(db.func.LOWER(Data.city)).filter(Data.email != "admin@gmail.com").limit(10).all()
 
     students_by_diplome = db.session.query(Data.diplome, db.func.count(
-        Data.diplome)).group_by(db.func.LOWER(Data.diplome)).filter(Data.email != "admin@gmail.com").all()
+        Data.diplome)).group_by(db.func.LOWER(Data.diplome)).filter(Data.email != "admin@gmail.com").limit(10).all()
 
     students_by_statut = db.session.query(Data.status, db.func.count(
-        Data.status)).group_by(db.func.LOWER(Data.status)).filter(Data.email != "admin@gmail.com").all()
+        Data.status)).group_by(db.func.LOWER(Data.status)).filter(Data.email != "admin@gmail.com").limit(10).all()
 
     total_students_c = []
     cities = []

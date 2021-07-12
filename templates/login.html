@@ -38,7 +38,7 @@
 
             <button>Creer</button>
             
-            <p class="message">J'ai deja un comte <a href="#">Se connecter</a></p>
+            <p class="message">J'ai deja un compte <a href="#">Se connecter</a></p>
         </form>
       
         {% with messages = get_flashed_messages() %}
@@ -47,16 +47,18 @@
                 {{ messages[0] }}
             </div>
         {% endif %}
-        {% endwith %}
+        {% endwith %}       
       <form class="login-form"  action="{{ url_for('signin_post') }}" method="POST">
         <input type="email" name="email" placeholder="email"/>
         <input type="password" name= "password" placeholder="password"/>
         <button>Se connecter</button>
         <p class="message">Non enregister <a href="#">Creer un compte</a></p>
       </form>
+            
 
    
     </div>
+  </div>
   </div>
   <div class="background">
   </div>
